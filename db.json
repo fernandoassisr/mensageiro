@@ -1,7 +1,7 @@
 {
-	"host" : "192.168.100.63",
-    "user" : "users_import",
+"host" : "",
+    "user" : "",
     "port" : "3306",
-    "password" : "teste123",
-    "database" : "teste"
+    "password" : "",
+    "database" : ""
 }
