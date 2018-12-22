@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * Inicia sessão 
  */
 
 
