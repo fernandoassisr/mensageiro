@@ -15,10 +15,22 @@ pipelines:
     #       - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     #       - composer install
     #       - vendor/bin/phpunit
-          
+  
     - step:
           name: Deploy to test
-          deployment: test   # can be test, staging or production.
+          deployment: staging   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
           script:
-            - echo "Deploying to test environment"
+            - git branch
+            - git pull ssh://git@github.com:fernandoassisr/mensageiro.git master
+            - git branch -d tmp_deploy || true
+            - git checkout -b tmp_deploy
+            - git branch -f master tmp_deploy
+            - git checkout master
+            - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
+            - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
+          environment:
+            name: staging
+            url: ssh://git@github.com:fernandoassisr/mensageiro.git
+          only:
+          - master        
