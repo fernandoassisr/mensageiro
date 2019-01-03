@@ -31,8 +31,8 @@ pipelines:
             - git checkout master
             - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
             - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
-          environment:
-            name: staging
-            url: ssh://git@github.com:fernandoassisr/mensageiro.git
-          only:
-          - master        
+          # environment:
+          #   name: staging
+          #   url: ssh://git@github.com:fernandoassisr/mensageiro.git
+          # only:
+          # - master        
