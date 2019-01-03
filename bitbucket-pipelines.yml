@@ -14,13 +14,13 @@ pipelines:
           script:
             - apk add --no-cache git openssh
             - git branch
-            - git pull ssh://git@github.com:fernandoassisr/mensageiro.git master
+            - git pull git@github.com:fernandoassisr/mensageiro.git master
             - git branch -d tmp_deploy || true
             - git checkout -b tmp_deploy
             - git branch -f master tmp_deploy
             - git checkout master
-            - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
-            - git push ssh://git@github.com:fernandoassisr/mensageiro.git master
+            - git push git@github.com:fernandoassisr/mensageiro.git master
+            - git push git@github.com:fernandoassisr/mensageiro.git master
           # environment:
           #   name: staging
           #   url: ssh://git@github.com:fernandoassisr/mensageiro.git
