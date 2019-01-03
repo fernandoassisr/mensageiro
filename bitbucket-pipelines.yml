@@ -7,7 +7,10 @@ image: php:7.1.1
 
 pipelines:
   default:
-    # - step:
+     - step:
+        script:
+          # install deps
+          - apt-get update && apt-get install -y git
     #     caches:
     #       - composer
     #     script:
