@@ -25,10 +25,10 @@ pipelines:
             - git config --global user.name "Fernando de Assis"
 
             - git branch
-            #- git pull git@bitbucket.org:fernandoassissr/mensageiro.git master
+            - git pull git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH
             - git branch -d tmp_deploy || true
             - git checkout -b tmp_deploy
-            - git branch -f master tmp_deploy
-            - git checkout master
-            - git push git@github.com:fernandoassisr/mensageiro.git master
-            - git push git@github.com:fernandoassisr/mensageiro.git master     
+            - git branch -f $BITBUCKET_BRANCH tmp_deploy
+            - git checkout $BITBUCKET_BRANCH
+            - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH
+            - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH     
