@@ -1,8 +1,4 @@
-# This is a sample build configuration for PHP.
-# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
+# Pipe-line to push to git hub repositorio
 image: alpine:latest
 
 pipelines:
@@ -35,9 +31,4 @@ pipelines:
             - git branch -f master tmp_deploy
             - git checkout master
             - git push git@github.com:fernandoassisr/mensageiro.git master
-            - git push git@github.com:fernandoassisr/mensageiro.git master
-          # environment:
-          #   name: staging
-          #   url: ssh://git@github.com:fernandoassisr/mensageiro.git
-          # only:
-          # - master        
+            - git push git@github.com:fernandoassisr/mensageiro.git master     
