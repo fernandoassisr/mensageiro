@@ -22,7 +22,7 @@ pipelines:
             - chmod 600 ~/.ssh/id_rsa
 
             - git branch
-            - git pull git@bitbucket.org:fernandoassissr/mensageiro.git master
+            #- git pull git@bitbucket.org:fernandoassissr/mensageiro.git master
             - git branch -d tmp_deploy || true
             - git checkout -b tmp_deploy
             - git branch -f master tmp_deploy
