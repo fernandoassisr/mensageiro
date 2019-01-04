@@ -17,9 +17,14 @@ pipelines:
 
             # Criando chaves e relação de confiança
             - git remote set-url origin ${BITBUCKET_GIT_SSH_ORIGIN}
+            - eval $(ssh-agent -s)
+            - mkdir -p ~/.ssh
             - echo $PRIVATE_KEY > ~/.ssh/id_rsa.tmp
             - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
             - chmod 600 ~/.ssh/id_rsa
+            - chmod 700 ~/.ssh
+            - git config --global user.email "fernandoassissr@gmail.com"
+            - git config --global user.name "Fernando de Assis"
 
             - git branch
             #- git pull git@bitbucket.org:fernandoassissr/mensageiro.git master
