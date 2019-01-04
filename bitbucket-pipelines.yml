@@ -1,8 +1,4 @@
-# This is a sample build configuration for PHP.
-# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
+# Pipe-line to push to git hub repositorio
 image: alpine:latest
 
 pipelines:
@@ -12,17 +8,27 @@ pipelines:
           deployment: staging   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
           script:
+            # Instalando dependencias uteis
             - apk add --no-cache git openssh
+
+            # Criando chaves e relação de confiança
+            - git remote set-url origin ${BITBUCKET_GIT_SSH_ORIGIN}
+            - echo ${BITBUCKET_GIT_SSH_ORIGIN}
+            - eval $(ssh-agent -s)
+            - mkdir -p ~/.ssh
+            - echo ${PRIVATE_KEY} > ~/.ssh/id_rsa.tmp
+            - echo ${PRIVATE_KEY}
+            - base64 -d ~/.ssh/id_rsa.tmp > ~/.ssh/id_rsa
+            - chmod 600 ~/.ssh/id_rsa
+            - chmod 700 ~/.ssh
+            - git config --global user.email "fernandoassissr@gmail.com"
+            - git config --global user.name "Fernando de Assis"
+
             - git branch
-            - git pull git@github.com:fernandoassisr/mensageiro.git master
+            #- git pull git@bitbucket.org:fernandoassissr/mensageiro.git master
             - git branch -d tmp_deploy || true
             - git checkout -b tmp_deploy
             - git branch -f master tmp_deploy
             - git checkout master
             - git push git@github.com:fernandoassisr/mensageiro.git master
-            - git push git@github.com:fernandoassisr/mensageiro.git master
-          # environment:
-          #   name: staging
-          #   url: ssh://git@github.com:fernandoassisr/mensageiro.git
-          # only:
-          # - master        
+            - git push git@github.com:fernandoassisr/mensageiro.git master     
