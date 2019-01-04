@@ -3,15 +3,22 @@ services:
 
   php:
     container_name: php_mensageiro
+<<<<<<< HEAD
+    image: php:5.6-fpm
+=======
     #image: php:5.6-fpm
     build: dockerfiles/build/php/fpm-5.6/
+>>>>>>> 12efb3205bb8fec5914efda45a78a07b4ac5083f
     restart: always
     ports:
       - "9000:9000"
     privileged: true
     volumes:
       - /var/www/:/var/www/
+<<<<<<< HEAD
+=======
       - ./log/php/:/var/log/php/
+>>>>>>> 12efb3205bb8fec5914efda45a78a07b4ac5083f
     tty: true
     env_file:
       - ./.ENV
@@ -20,9 +27,13 @@ services:
 
   web:
     container_name: web_mensageiro
+<<<<<<< HEAD
+    image: nginx:stable
+=======
     # image: nginx:stable
     build: dockerfiles/build/nginx
     command: [nginx-debug, '-g', 'daemon off;'] # Em modo debug
+>>>>>>> 12efb3205bb8fec5914efda45a78a07b4ac5083f
     restart: always
     ports:
       - "80:80"
@@ -31,7 +42,11 @@ services:
       - php
     privileged: true
     volumes:
+<<<<<<< HEAD
+      - /var/www/:/usr/share/nginx/html/
+=======
       - /var/www/:/var/www/
+>>>>>>> 12efb3205bb8fec5914efda45a78a07b4ac5083f
       - ./log/nginx:/var/log/nginx/
     env_file:
       - ./.ENV
