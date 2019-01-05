@@ -4,7 +4,8 @@
     email: true
   language: php
   php:
-    - 7.1.9
+    - hhvm-3.18
+    - hhvm-nightly
   # services:
   #   - docker
   # script: 
