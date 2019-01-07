@@ -4,6 +4,13 @@ image: alpine:latest
 pipelines:
   default:
      - step:
+          name: Test using PHPUnit
+          deployment: test   # can be test, staging or production.
+      # trigger: manual  # Uncomment to make this a manual deployment.
+          script:
+            - ./install-phpunit.sh  
+            - phpunit -c phpunit.xml
+     - step:
           name: Deploy to test
           deployment: staging   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
