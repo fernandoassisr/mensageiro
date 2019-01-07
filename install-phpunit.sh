@@ -33,17 +33,17 @@ apk --no-cache add \
         php7-xmlwriter \
         php7-zip \
         php7-zlib \
-        unzip
-    && php -r "copy('https://pear.php.net/go-pear.phar', 'go-pear.phar');" \
-    && php go-pear.phar \
-    && php -r "unlink('go-pear.phar');" \
-    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php composer-setup.php --install-dir=/usr/bin --filename=composer \
-    && php -r "unlink('composer-setup.php');" \
-    && composer require "phpunit/phpunit:^7.4" --prefer-source --no-interaction \
-    && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
-    && ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit \
-    && sed -i 's/nn and/nn, Nicolas Frey (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
-    # Enable X-Debug
-    && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
-    && php -m | grep -i xdebug
+        unzip && \
+        php -r "copy('https://pear.php.net/go-pear.phar', 'go-pear.phar');" && \
+        php go-pear.phar && \
+        php -r "unlink('go-pear.phar');" && \
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+        php composer-setup.php --install-dir=/usr/bin --filename=composer && \
+        php -r "unlink('composer-setup.php');" && \
+        composer require "phpunit/phpunit:^7.4" --prefer-source --no-interaction && \
+        composer require "phpunit/php-invoker" --prefer-source --no-interaction && \
+        ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit && \
+        sed -i 's/nn and/nn, Nicolas Frey (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php && \
+        # Enable X-Debug
+        sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini && \
+        php -m | grep -i xdebug
