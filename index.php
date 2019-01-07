@@ -11,10 +11,6 @@ class Index
 	function __construct()
 	{
 		session_start();
-
-// $_SESSION['test'] = 42;
-// $test = 43;
-var_dump($_SESSION);
 		switch ($_GET['sit']) {
 			case 1:
 				echo '<div class="alert alert-success">
