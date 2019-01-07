@@ -8,7 +8,7 @@ pipelines:
           deployment: test   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
           script:
-           - install-phpunit.sh  
+           - ./install-phpunit.sh  
            - phpunit -c phpunit.xml
      - step:
           name: Deploy to test

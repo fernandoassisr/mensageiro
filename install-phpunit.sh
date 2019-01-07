@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 apk --no-cache add \
         bash \
         ca-certificates \
