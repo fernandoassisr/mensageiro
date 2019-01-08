@@ -8,9 +8,3 @@ jobs:
       - run:
           name: phpunit Test suite case
           command: phpunit -c phpunit.xml
-
-  workflows:
-    version: 2
-    test:
-      jobs:
-        - test
