@@ -1,5 +1,11 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: fernandoassissr/mensageiro:teste1
+    steps:
+      - run: echo 'works'
+
   test:
     docker:
       - image: fernandoassissr/mensageiro:teste1
@@ -12,3 +18,9 @@ jobs:
           script:
            # - ./install-phpunit.sh  
            - phpunit -c phpunit.xml
+  workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
