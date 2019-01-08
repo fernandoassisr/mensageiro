@@ -10,14 +10,8 @@ jobs:
     docker:
       - image: fernandoassissr/mensageiro:teste1
     steps:
-          name: Test using PHPUnit
-          deployment: test   # can be test, staging or production.
-          # caches:
-          #  - composer
-          # trigger: manual  # Uncomment to make this a manual deployment.
-          script:
-           # - ./install-phpunit.sh  
-           - phpunit -c phpunit.xml
+      - run: phpunit -c phpunit.xml
+      
   workflows:
     version: 2
     build_and_test:
