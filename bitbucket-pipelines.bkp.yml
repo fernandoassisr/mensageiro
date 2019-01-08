@@ -1,5 +1,5 @@
 # Pipeline to push to git hub repositorio
-image: fernandoassisr/mensageiro:teste1
+image: fernandoassissr/mensageiro:teste1
 
 pipelines:
   default:
