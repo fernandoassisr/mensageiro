@@ -6,5 +6,8 @@ jobs:
       - image: fernandoassissr/mensageiro:teste1
     steps:
       - run:
+          name: echo localiza
+          command: pwd
+      - run:
           name: phpunit Test suite case
           command: phpunit -c phpunit.xml
