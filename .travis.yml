@@ -3,9 +3,10 @@
   notifications:
     email: true
   language: php
-  php:
-    - hhvm-3.18
-    - hhvm-nightly
+  script: phpunit --configuration phpunit.xml
+  # php:
+  #   - hhvm-3.18
+  #   - hhvm-nightly
   # services:
   #   - docker
   # script: 
