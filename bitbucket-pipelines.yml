@@ -17,9 +17,6 @@ pipelines:
           deployment: staging   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
           script:
-            # Instalando dependencias uteis
-            - apk add --no-cache git openssh
-
             # Criando chaves e relação de confiança
             - git remote set-url origin ${BITBUCKET_GIT_SSH_ORIGIN}
             - eval $(ssh-agent -s)
