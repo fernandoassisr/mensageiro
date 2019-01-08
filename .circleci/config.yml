@@ -19,8 +19,8 @@ jobs:
            # - ./install-phpunit.sh  
            - phpunit -c phpunit.xml
   workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+    version: 2
+    build_and_test:
+      jobs:
+        - build
+        - test
