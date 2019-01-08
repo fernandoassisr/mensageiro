@@ -17,6 +17,6 @@ class CadastrarTest extends \PHPUnit_Framework_TestCase
    		// $password = 'skdjksd';
    		// $usuario = new User($user, $email, $password);
      //    $this->assertTrue($usuario->insere());
-     	$this->assertTrue('true');    
+     	$this->assertTrue('false');    
     }
 }
