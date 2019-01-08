@@ -6,9 +6,9 @@ pipelines:
      - step:
           name: Test using PHPUnit
           deployment: test   # can be test, staging or production.
-          caches:
-           - composer
-      # trigger: manual  # Uncomment to make this a manual deployment.
+          # caches:
+          #  - composer
+          # trigger: manual  # Uncomment to make this a manual deployment.
           script:
            # - ./install-phpunit.sh  
            - phpunit -c phpunit.xml
