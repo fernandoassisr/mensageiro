@@ -1,5 +1,5 @@
 # Pipeline to push to git hub repositorio
-image: php:7.1.1
+image: fernandoassisr/mensageiro:teste1
 
 pipelines:
   default:
