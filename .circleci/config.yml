@@ -9,11 +9,5 @@ jobs:
           name: echo localiza
           command: pwd
       - run:
-          name: echo listar
-          command: ls
-      - run:
-          name: entrar diretorio
-          command: cd mensageiro
-      - run:
           name: phpunit Test suite case
-          command: phpunit -c phpunit.xml
+          command: phpunit -c {{ CIRCLE_WORKING_DIRECTORY }} ./phpunit.xml
