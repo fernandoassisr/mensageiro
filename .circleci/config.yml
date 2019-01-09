@@ -9,5 +9,8 @@ jobs:
           name: echo localiza
           command: pwd
       - run:
+          name: "Fix CIRCLE_WORKING_DIRECTORY"
+          command: echo 'CIRCLE_WORKING_DIRECTORY="${CIRCLE_WORKING_DIRECTORY/#\~/$HOME}"' >> $BASH_ENV
+      - run:
           name: phpunit Test suite case
-          command: phpunit -c {{ CIRCLE_WORKING_DIRECTORY }} ./phpunit.xml
+          command: phpunit -c $CIRCLE_WORKING_DIRECTORY/phpunit.xml
