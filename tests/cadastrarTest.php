@@ -2,7 +2,7 @@
 <?php
 
 $rootPath = dirname(__DIR__);
-require $rootPath.'controllers/user.php';
+require $rootPath.'/controllers/user.php';
 /**
  * Testar a classe de cadastro de usuario
  *
