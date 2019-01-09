@@ -13,4 +13,4 @@ jobs:
           command: echo 'CIRCLE_WORKING_DIRECTORY="${CIRCLE_WORKING_DIRECTORY/#\~/$HOME}"' >> $BASH_ENV
       - run:
           name: phpunit Test suite case
-          command: phpunit -c $CIRCLE_WORKING_DIRECTORY/phpunit.xml
+          command: sudo phpunit -c $CIRCLE_WORKING_DIRECTORY/phpunit.xml
