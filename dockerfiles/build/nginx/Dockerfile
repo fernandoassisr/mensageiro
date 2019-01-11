@@ -1,5 +1,7 @@
 FROM nginx:1.12.2
 
+MAINTAINER Fernando de Assis <fernandoassissr@gmal.com>
+
 ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
