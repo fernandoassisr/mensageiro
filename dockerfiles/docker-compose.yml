@@ -3,7 +3,8 @@ services:
 
   php:
     container_name: php_mensageiro
-    image: php:5.6-fpm
+    # image: php:5.6-fpm
+    build: build/php/fpm-5.6/
     restart: always
     ports:
       - "9000:9000"
@@ -18,7 +19,8 @@ services:
 
   web:
     container_name: web_mensageiro
-    image: nginx:stable
+    # image: nginx:stable
+    build: build/nginx
     restart: always
     ports:
       - "80:80"
