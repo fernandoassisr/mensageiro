@@ -1,4 +1,3 @@
-
 <?php
 
 $rootPath = dirname(__DIR__);

@@ -2,7 +2,9 @@
 /**
  * 
  */
-include 'conection.php';
+
+$rootPath = dirname((__DIR__));
+include $rootPath.'/system/conection.php';
 class User 
 {
 	private $email, $user, $password, $conexao;
