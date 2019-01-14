@@ -44,13 +44,7 @@ RUN apk --no-cache add \
         php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
         php composer-setup.php --install-dir=/usr/bin --filename=composer && \
         php -r "unlink('composer-setup.php');"
-        # Install phpunit
-        # composer require "phpunit/phpunit:^7.4" --prefer-source --no-interaction && \
-        # composer require "phpunit/php-invoker" --prefer-source --no-interaction && \
-        # ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit && \
-        # Enable X-Debug
-        # sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini && \
-        # php -m | grep -i xdebug
+        
 
 RUN curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit-5.phar
 RUN chmod +x /usr/local/bin/phpunit
