@@ -4,7 +4,7 @@
  */
 
 
-include 'head.html';
+include 'src/views/head.html';
 class Index 
 {
 	
