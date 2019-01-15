@@ -1,7 +1,7 @@
 <?php
 
-$rootPath = dirname(__DIR__);
-require $rootPath.'/index.php';
+// $rootPath = dirname(__DIR__);
+// require $rootPath.'/index.php';
 /**
  * Testar a classe de cadastro de usuario
  *
