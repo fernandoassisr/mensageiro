@@ -5,6 +5,7 @@ MAINTAINER Fernando de Assis <fernandoassissr@gmal.com>
 RUN apk --no-cache add \
         bash \
         openssh \
+        tree \
         ca-certificates \
         curl \
         git \
