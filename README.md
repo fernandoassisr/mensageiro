@@ -5,7 +5,7 @@ Repositorio para testes referentes a containers e virtualização;
 Codigo foi escrito meramente para ilustrar uma simples aplicação;
 Objetivo melhorar qualidade do codigo e criar configurações para o mesmo.
 
-# Messenger =D
+# messenger
 This Repo is for tests on containers and virtaualization;
 The php source code was written to ilustrate a simple app;
 The main objective is to improve the code quality and create great config files.
