@@ -30,6 +30,9 @@ pipelines:
             - git branch -d tmp_deploy || true
             - git checkout -b tmp_deploy
             - git branch -f $BITBUCKET_BRANCH tmp_deploy
+            - git config user.name "Fernando de Assis"
+            - git config user.email "fernandoassissr@gmail.com"
+            - git branch -f $BITBUCKET_BRANCH tmp_deploy
             - git checkout $BITBUCKET_BRANCH
             - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH
             - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH     
