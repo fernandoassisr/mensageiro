@@ -39,7 +39,7 @@ class Index
 				# code...
 				break;
 		}
-		include 'views/indexview.html';
+		include 'src/views/indexview.html';
 	}
 }
 new Index();
