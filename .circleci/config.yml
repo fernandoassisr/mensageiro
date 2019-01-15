@@ -12,5 +12,8 @@ jobs:
           name: "Fix CIRCLE_WORKING_DIRECTORY"
           command: echo 'CIRCLE_WORKING_DIRECTORY="${CIRCLE_WORKING_DIRECTORY/#\~/$HOME}"' >> $BASH_ENV
       - run:
+          name: "Tree everything"
+          command: tree
+      - run:
           name: phpunit Test suite case
           command: phpunit
