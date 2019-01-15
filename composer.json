@@ -18,7 +18,7 @@
     },
     "require-dev":  {
         "php": "~5.6.3",
-        "phpunit/phpunit":  "5.3.5",
+        "phpunit/phpunit":  "7.5.2",
         "phpunit/dbunit":  "2.0.2",
         "phpunit/phpunit-selenium" : "3.0.3"
     },
