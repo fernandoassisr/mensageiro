@@ -28,8 +28,9 @@ class Cadastrar
    		$usuario = new User($user, $email, $password);
    		$usuario->insere();
    	} else {
-		include 'head.html';
-   		include 'cadastrarView.html';
+		$rootPath = dirname((__DIR__));
+		include $rootPath.'/views/head.html';
+   		include $rootPath.'/views/cadastrarView.html';
    	}
 	}
 }

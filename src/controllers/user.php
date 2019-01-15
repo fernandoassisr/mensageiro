@@ -12,10 +12,15 @@ class User
 	function __construct($user, $email, $password)
 	{
 		$object = new Conection();
-		$this->conexao = $object->conectar();	
-		$this->setUser($user);	
-		$this->setPassword($password);	
-		$this->setEmail($email);	
+		if($this->conexao = $object->conectar()) {	
+			$this->setUser($user);	
+			$this->setPassword($password);	
+			$this->setEmail($email);
+		} else {
+			echo '<div class="alert alert-danger">
+    		<strong>Dados incorretos</strong><br> Erro ao conectar no banco.</div>';
+    		die();
+		}
 	
 	}
 	function Redirect($url, $permanent = false)
