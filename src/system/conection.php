@@ -8,7 +8,7 @@ class Conection
 	
 	function __construct()
 	{
-        $json = file_get_contents("db.json");
+        $json = file_get_contents("../system/db.json");
         $config = json_decode($json, true);
         $this->setHost($config["host"]);
         $this->setUser($config["user"]);
