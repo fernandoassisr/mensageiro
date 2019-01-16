@@ -43,5 +43,5 @@ pipelines:
           #  - composer
           # trigger: manual  # Uncomment to make this a manual deployment.
           script:
-           # - ./install-phpunit.sh
+            - echo 'go'
          
