@@ -17,4 +17,4 @@ jobs:
           command: tree
       - run:
           name: phpunit Test suite case
-          command: phpunit
+          command: phpunit -c phpunit.xml
