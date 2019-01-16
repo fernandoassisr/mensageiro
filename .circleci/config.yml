@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: fernandoassissr/mensageiro:teste1
     steps:
+    working_directory: ~/mensageiro
       - run:
           name: echo localiza
           command: pwd
