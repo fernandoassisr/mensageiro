@@ -13,7 +13,7 @@ pipelines:
            # - ./install-phpunit.sh  
            - phpunit -c phpunit.xml
      - step:
-          name: Deploy to test
+          name: Deploy to GitHub
           deployment: staging   # can be test, staging or production.
       # trigger: manual  # Uncomment to make this a manual deployment.
           script:
@@ -35,4 +35,13 @@ pipelines:
             - git config --global user.name "Fernando de Assis"
             - git config --global user.email "fernandoassissr@gmail.com"
             - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH
-            - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH     
+            - git push git@github.com:fernandoassisr/mensageiro.git $BITBUCKET_BRANCH
+     - step:
+          name: Production
+          deployment: production   # can be test, staging or production.
+          # caches:
+          #  - composer
+          # trigger: manual  # Uncomment to make this a manual deployment.
+          script:
+           # - ./install-phpunit.sh
+         
