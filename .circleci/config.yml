@@ -15,6 +15,6 @@ jobs:
       - run:
           name: "Tree everything"
           command: tree
-      - run:
-          name: phpunit Test suite case
-          command: phpunit -c phpunit.xml
+      # - run:
+      #     name: phpunit Test suite case
+      #     command: phpunit -c phpunit.xml
