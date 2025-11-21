@@ -1,4 +1,4 @@
-FROM php:5.6-fpm
+FROM php:8.5-fpm
 
 MAINTAINER Fernando de Assis <fernandoassissr@gmal.com>
 
