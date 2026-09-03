@@ -1,4 +1,4 @@
-FROM nginx:1.15.10
+FROM nginx:1.31.5
 
 MAINTAINER Fernando de Assis <fernandoassissr@gmal.com>
 
